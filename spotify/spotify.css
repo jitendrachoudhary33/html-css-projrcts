@@ -1,0 +1,282 @@
+*{
+    padding:0;
+    margin:0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+body{
+    background-color: black;
+}
+.main{
+    /* border:2px solid red; */
+    height: 100vh;
+    width: inherit;
+    background-color: black;
+}
+
+
+/*------------------------------ ASIDE --------------------------*/
+
+aside{
+    /* border: 2px solid blueviolet; */
+    height: 90vh;
+    width: 18vw;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap: 5.3%;
+
+    
+
+}
+.logo{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.homesearchlibrary{
+    /* border: 2px solid rgb(137, 132, 132); */
+
+} 
+.home ,.search, .library{
+    /* border: 2px solid yellowgreen; */
+    height: 40px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center ;
+    gap: 10px;
+    padding-left:50px;
+}
+/*-------------------------------  HOVER ------------------------------------- */
+.library:hover {
+    background-color: #282828;
+
+}
+.home,.search:hover {
+    background-color: #282828;
+
+}
+
+.createsection{
+    /* border: 2px solid gray; */
+    height: 130px;
+
+}
+.createthree:hover{
+    background-color: #282828;
+
+}
+.favfive p:hover{
+    background-color: #282828;
+    display: block;
+
+}
+/* ----------------------------------------------------------------------------------------------- */
+.createthree{
+    /* border: 2px solid green; */
+    height: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    row-gap: 10px;
+    padding-left: 50px;
+
+    
+}
+.favsection{
+    /* border: 2px solid white; */
+    height: 230px;
+}
+.favfive{
+    /* border: 2px solid wheat; */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:50px ;
+    gap: 5%;
+
+
+}
+
+.installapp{
+    /* border: 2px solid wheat; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------  LOWER  ---------------------------*/
+
+.lower{
+    /* border: 2px solid gray; */
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13%;
+
+}
+.profilesong{
+    /* border: 2px solid gray; */
+    height: 70px;
+    width: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.profilesong div :nth-child(2){
+    color: gray;
+    
+}
+.lowermiddle{
+    /* border: 2px solid greenyellow; */
+
+}
+.lowerlast{
+    /* border: 2px solid gray; */
+
+}
+.songsection [class]:hover{
+    background-color: #282828;
+}
+.cardslike [class]:hover{
+    background-color: #282828;
+}
+.showyoulike p:hover{
+    background-color: #282828;
+    
+}
+
+/*------------ ASIDE_SIDE ------------------------- */
+.aside-side{
+    /* border: 2px solid blue; */
+    display: flex;
+
+}
+/*----------------  SIDE --------------------*/
+.side{
+    /* border: 2px solid green; */
+    width: 80vw;
+    row-gap: 5%;
+    background-color: #121212;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.side-nav{
+    /* border: 2px solid white; */
+    width: 80vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.right-left{
+    /* border: 2px solid rgb(121, 121, 142); */
+    height: 50px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.morning{
+    /* border: 2px solid wheat; */
+    color: white;
+    font-size:40px;
+    width: 80vw;
+    height: 50px;
+
+}
+.songsection{
+    /* border: 2px solid gray ; */
+    height: 200px;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4%;
+    
+}
+.mix-songs{
+    /* border: 2px solid green; */
+    height: 70px;
+    width: 270px;
+    display: flex;
+
+}
+.img{
+    /* border: 2px solid red ; */
+    width:70px;
+    height: 70px;
+
+}
+.textmix{
+    /* border: 2px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 70px;
+    background-color: rgb(70, 70, 70);
+    
+
+}
+
+
+/*-----------------------------  SHOW YOU MIGHT BE LIKE ---------------------------*/
+
+.showyoulike{
+    /* border: 2px solid gray; */
+    height: 50px;
+    width: 80vw;
+    font-size:25px ;
+    color: rgb(188, 183, 183);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardslike{
+    /* border: 2px solid blue; */
+    height: 300px;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1%;
+
+
+     
+}
+
+.cards{
+    /* border: 2px solid gray; */
+    height: 250px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #181818;
+
+
+}
+
+
+
+
+
+
+

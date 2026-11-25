@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Over Scoreboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at 50% 45%, #344c54, transparent 55%),
+                linear-gradient(to bottom, #07182c 0%, #142c3d 45%, #102512 75%, #071407 100%);
+        }
+
+        /* Stadium Background */
+
+        .stadium {
+            min-height: 100vh;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 90%, #23451a 0%, #10230e 45%, transparent 70%);
+        }
+
+        /* Header Logo */
+
+        .logo {
+            text-align: center;
+            font-size: 27px;
+            font-weight: bold;
+            line-height: 25px;
+            margin-bottom: 75px;
+            text-shadow: 0 2px 5px black;
+        }
+
+        .logo span {
+            display: block;
+        }
+
+        /* Score Cards */
+
+        .score-container {
+            display: flex;
+            justify-content: center;
+            gap: 7%;
+        }
+
+        .score-card {
+            width: 32%;
+            height: 350px;
+            border-radius: 22px;
+            text-align: center;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .india {
+            background: #0876d6;
+        }
+
+        .pakistan {
+            background: #25a900;
+        }
+
+        .score-card h1 {
+            font-size: 65px;
+            margin: 15px 0 35px;
+        }
+
+        /* Ball Numbers */
+
+        .balls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .balls span {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        /* Total Score */
+
+        .total {
+            font-size: 43px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        /* Bottom Buttons */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 55px;
+            margin-top: 75px;
+        }
+
+        .edit, .reset {
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
+            border: 5px solid white;
+            color: white;
+            font-size: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+        }
+
+        .edit {
+            background: #ffb52b;
+        }
+
+        .reset {
+            background: #e52525;
+        }
+
+        /* Small Screen */
+
+        @media (max-width: 650px) {
+            .logo {
+                margin-bottom: 45px;
+            }
+
+            .score-container {
+                gap: 15px;
+            }
+
+            .score-card {
+                width: 48%;
+                height: 260px;
+                padding: 12px 5px;
+            }
+
+            .score-card h1 {
+                font-size: 38px;
+                margin: 20px 0;
+            }
+
+            .balls {
+                gap: 3px;
+            }
+
+            .balls span {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+
+            .total {
+                font-size: 28px;
+            }
+
+            .buttons {
+                margin-top: 55px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="stadium">
+
+        <!-- Logo -->
+
+        <div class="logo">
+            <span>🏏 SUPER</span>
+            <span>OVER</span>
+        </div>
+
+        <!-- Score Cards -->
+
+        <div class="score-container">
+
+            <!-- India -->
+
+            <div class="score-card india">
+
+                <h1>IND</h1>
+
+                <div class="balls">
+                    <span>4</span>
+                    <span>3</span>
+                    <span>2</span>
+                    <span>6</span>
+                    <span>6</span>
+                    <span>6</span>
+                </div>
+
+                <div class="total">
+                    27 / 0
+                </div>
+
+            </div>
+
+            <!-- Pakistan -->
+
+            <div class="score-card pakistan">
+
+                <h1>PAK</h1>
+
+                <div class="balls">
+                    <span>2</span>
+                    <span>4</span>
+                    <span>0</span>
+                    <span>3</span>
+                    <span>1</span>
+                    <span>4</span>
+                </div>
+
+                <div class="total">
+                    14 / 0
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Buttons -->
+
+        <div class="buttons">
+
+            <div class="edit">
+                ✎
+            </div>
+
+            <div class="reset">
+                ↶
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

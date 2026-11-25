@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #141414;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Hero + Navbar Container */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.15) 35%, rgba(20, 20, 20, 0.95) 95%, #141414 100%),
+        url("./assets/Title-Image.png");
+      background-size: cover;
+      background-position: center top;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 40px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 56px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-logo {
+      height: 26px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #e5e5e5;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-icon {
+      height: 20px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .profile-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .profile-img {
+      height: 30px;
+      width: 30px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .down-arrow {
+      height: 10px;
+      width: auto;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      padding: 120px 56px 20px;
+      max-width: 600px;
+    }
+
+    .show-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .show-tag img {
+      height: 24px;
+    }
+
+    .show-tag span {
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: #e5e5e5;
+    }
+
+    .hero-title {
+      font-size: 86px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn img {
+      height: 18px;
+      width: auto;
+    }
+
+    .btn-play {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .btn-play:hover {
+      background-color: #e6e6e6;
+    }
+
+    .btn-info {
+      background-color: rgba(109, 109, 110, 0.7);
+      color: #ffffff;
+    }
+
+    .btn-info:hover {
+      background-color: rgba(109, 109, 110, 0.5);
+    }
+
+    /* Content Rows */
+    .rows-container {
+      padding: 0 56px;
+      margin-top: -20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .row {
+      margin-bottom: 38px;
+    }
+
+    .row-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e5e5e5;
+    }
+
+    .row-title img {
+      height: 12px;
+      width: auto;
+    }
+
+    /* Standard 5-Card Row */
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .card {
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Top 10 Row */
+    .top10-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .top10-item {
+      display: flex;
+      align-items: flex-end;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+
+    .top10-item:hover {
+      transform: scale(1.04);
+    }
+
+    .rank-num {
+      width: 45%;
+      height: auto;
+      display: block;
+      margin-right: -12px;
+      z-index: 1;
+    }
+
+    .rank-poster {
+      width: 60%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      z-index: 2;
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 980px;
+      margin: 70px auto 40px;
+      padding: 0 24px;
+      color: #808080;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .social-icons img {
+      height: 22px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 20px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      color: #808080;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .service-btn {
+      background: transparent;
+      color: #808080;
+      border: 1px solid #808080;
+      padding: 7px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    .service-btn:hover {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #808080;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section with Navbar -->
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="./assets/NetflixLogoSvg.png" alt="Netflix" class="nav-logo" />
+        <ul class="nav-links">
+          <li><a href="#" class="active">Start</a></li>
+          <li><a href="#">Shows</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <img src="./assets/Search.png" alt="Search" class="nav-icon" />
+        <img src="./assets/GiftBox.png" alt="Gift" class="nav-icon" />
+        <img src="./assets/NotificationBell.png" alt="Notifications" class="nav-icon" />
+        <div class="profile-box">
+          <img src="./assets/ProfileIMG.png" alt="Profile" class="profile-img" />
+          <img src="./assets/DownArrow.png" alt="Dropdown" class="down-arrow" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="show-tag">
+        <img src="./assets/Netflix_Symbol_RGB 1.png" alt="N" />
+        <span>SHOW</span>
+      </div>
+      <h1 class="hero-title">MAID</h1>
+      <div class="hero-buttons">
+        <button class="btn btn-play">
+          <img src="./assets/Play.png" alt="Play" />
+          <span>Play</span>
+        </button>
+        <button class="btn btn-info">
+          <img src="./assets/Detail.png" alt="More info" />
+          <span>More info</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Movie & Show Rows -->
+  <main class="rows-container">
+
+    <!-- Row 1: See again -->
+    <section class="row">
+      <h2 class="row-title">
+        See again
+        <img src="./assets/ArrowRight.png" alt=">" />
+      </h2>
+      <div class="card-row">
+        <div class="card"><img src="./assets/section 1.1.png" alt="Show 1" /></div>
+        <div class="card"><img src="./assets/section 1.2.png" alt="Show 2" /></div>
+        <div class="card"><img src="./assets/section 1.3.png" alt="Show 3" /></div>
+        <div class="card"><img src="./assets/section 1.4.png" alt="Show 4" /></div>
+        <div class="card"><img src="./assets/section 1.5.png" alt="Show 5" /></div>
+      </div>
+    </section>
+
+    <!-- Row 2: Top 10 in your country -->
+    <section class="row">
+      <h2 class="row-title">
+        Top 10 in your country
+        <img src="./assets/ArrowRight.png" alt=">" />
+      </h2>
+      <div class="top10-row">
+        <div class="top10-item">
+          <img src="./assets/Rank - 01.png" alt="1" class="rank-num" />
+          <img src="./assets/section 2.1.png" alt="Red Notice" class="rank-poster" />
+        </div>
+        <div class="top10-item">
+          <img src="./assets/Rank - 02.png" alt="2" class="rank-num" />
+          <img src="./assets/section 2.2.png" alt="Jason Bourne" class="rank-poster" />
+        </div>
+        <div class="top10-item">
+          <img src="./assets/Rank - 03.png" alt="3" class="rank-num" />
+          <img src="./assets/section 2.3.png" alt="Squid Game" class="rank-poster" />
+        </div>
+        <div class="top10-item">
+          <img src="./assets/Rank - 04.png" alt="4" class="rank-num" />
+          <img src="./assets/section 2.4.png" alt="Central Intelligence" class="rank-poster" />
+        </div>
+        <div class="top10-item">
+          <img src="./assets/Rank - 05.png" alt="5" class="rank-num" />
+          <img src="./assets/section 2.5.png" alt="Hellbound" class="rank-poster" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 3: Trending now -->
+    <section class="row">
+      <h2 class="row-title">
+        Trending now
+        <img src="./assets/ArrowRight.png" alt=">" />
+      </h2>
+      <div class="card-row">
+        <div class="card"><img src="./assets/section 3.1.png" alt="Explained" /></div>
+        <div class="card"><img src="./assets/section 3.2.png" alt="Into the Night" /></div>
+        <div class="card"><img src="./assets/section 3.3.png" alt="Locke & Key" /></div>
+        <div class="card"><img src="./assets/section 3.4.png" alt="The Queen's Gambit" /></div>
+        <div class="card"><img src="./assets/section 3.5.png" alt="The Crown" /></div>
+      </div>
+    </section>
+
+    <!-- Row 4: Sci-fi shows -->
+    <section class="row">
+      <h2 class="row-title">
+        Sci-fi shows
+        <img src="./assets/ArrowRight.png" alt=">" />
+      </h2>
+      <div class="card-row">
+        <div class="card"><img src="./assets/section 4.1.png" alt="Altered Carbon" /></div>
+        <div class="card"><img src="./assets/section 4.2.png" alt="Another Life" /></div>
+        <div class="card"><img src="./assets/section 4.3.png" alt="The Umbrella Academy" /></div>
+        <div class="card"><img src="./assets/section 4.4.png" alt="Sense8" /></div>
+        <div class="card"><img src="./assets/section 4.5.png" alt="The Rain" /></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <img src="./assets/facebook.png" alt="Facebook" />
+      <img src="./assets/instagram.png" alt="Instagram" />
+      <img src="./assets/twitter.png" alt="Twitter" />
+      <img src="./assets/youtube.png" alt="YouTube" />
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Audio and Subtitles</a>
+      <a href="#">Audio Description</a>
+      <a href="#">Help Center</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Media Center</a>
+      <a href="#">Investor Relations</a>
+      <a href="#">Jobs</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Legal Notices</a>
+      <a href="#">Cookie Preferences</a>
+      <a href="#">Corporate Information</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <button class="service-btn">Service Code</button>
+    <p class="copyright">&copy; 1997-2021 Netflix, Inc.</p>
+  </footer>
+
+</body>
+</html>

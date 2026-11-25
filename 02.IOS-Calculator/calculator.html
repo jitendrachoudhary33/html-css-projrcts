@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        .calculator {
+            background-color: #1c1c1c;
+            width: 350px;
+            padding: 25px;
+        }
+
+        .display {
+            color: white;
+            font-size: 80px;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            height: 68px;
+            width: 68px;
+            border: none;
+            border-radius: 50%;
+            background-color: #505050;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .light {
+            background-color: #aaa;
+            color: black;
+        }
+
+        .orange {
+            background-color: #ff9900;
+            color: white;
+        }
+
+        .zero {
+            grid-column: span 2;
+            width: 100%;
+            border-radius: 40px;
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <div class="display">
+            7744
+        </div>
+
+        <div class="buttons">
+
+            <button class="light">C</button>
+            <button class="light">+/-</button>
+            <button class="light">%</button>
+            <button class="orange">÷</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="orange">x</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="orange">-</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="orange">+</button>
+
+            <button class="zero">0</button>
+            <button>,</button>
+            <button class="orange">=</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

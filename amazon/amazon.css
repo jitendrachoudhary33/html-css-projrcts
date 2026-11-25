@@ -1,0 +1,226 @@
+/* ####### navbar ############ */
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: #3d75b4;
+}
+.main{
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: inherit;
+}
+nav{
+    /* border:2px solid rgb(114, 32, 169); */
+    height:50px;
+    width:inherit;
+    background-color: #121921;
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+.logo{
+    height: 40px;
+    /* border: 2px solid wheat; */
+    padding: 3px;
+}
+.location{
+    /* border: 2px solid wheat; */
+    height: 40px;
+    width: 150px;
+    display:flex;
+    align-items: center;
+    
+}
+.locationtext{
+    color:white;
+    font-size: 15px;
+}
+.locationtext p {
+    font-weight: lighter;
+    opacity: .8;
+    font-size: 10px;
+}
+.searchbar{
+    width: 700px;
+    height: 40px;
+    /* border:2px solid wheat; */
+    display:flex;
+    border-radius: 10px;
+
+}
+.all{
+    height: 40px;
+    width: 50px;
+    /* border: 2px solid brown; */
+    border-right: 1px solid rgb(202, 121, 121);
+    color:rgb(76, 76, 76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+
+}
+.space{
+    height: 40px;
+    width: 600px;
+    /* border:2px solid green ; */
+    background-color: white;
+}
+.searchicon{
+    height: 40px;
+    width: 50px;
+    /* border:2px solid red; */
+    
+    background-color: #FBBE67;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.flag{
+    /* border:2px solid rgb(179, 142, 72); */
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.flagaftertext{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+.textflag{
+    color:white;
+    font-size: 15px;
+    font-weight:300;
+
+    
+}
+.textflag p{
+    color:white;
+    font-size: 10px;
+ 
+}
+.textdown{
+    /* border: 2px solid rgb(108, 155, 212); */
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.return{
+    /* border: 2px solid white; */
+    height: 40px;
+    width: 60px;
+    color: white;
+    font-size: 15px;
+    padding: 3px;
+}
+.return p{
+    font-size: 10px;
+}
+.cart{
+    /* border:2px solid wheat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.carttext{
+    color: white;
+    font-size: 15px;
+}
+/* ############## dropdown items ############# */
+
+.dropdownnav{
+    /* border:2px solid black; */
+    height: 50px;
+    background-color: #243040;
+    display: flex;
+    gap: 1%;
+
+}
+.dropall{
+    /* border: 2px solid gray ;  */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 20px;
+   
+}
+.bestseller,.mobile, .constomerservice ,.Todaydeals ,.fashion ,.electronics, .Books ,.prime ,.newrelease ,.homeandkitchen ,.amazonpay ,.lionandprimday {
+    /* border: 2px solid gray; */
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.lionandprimday{
+    /* border: 2px solid black; */
+    display: flex;
+    padding-left: 150px;
+    gap: 20px;
+}
+
+/* ###############  Body  #################### */
+
+.body{
+    background-image: url(./assets/background\ picture.png);
+    height: 100vh;
+    width: 100;
+    background-repeat: no-repeat;
+}
+.spacemain{
+    /* border: 2px solid gray; */
+    height:340px ;
+    width: inherit;
+
+}
+.cards{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+.firstcard{
+    /* border: 2px solid gray ; */
+    background-color: white ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 350px;
+    width: 20vw;
+    font-size:25px;
+    font-weight: 600;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.led , .appliances, .furniture, .kitchen{
+    /* border: 2px solid greenyellow; */
+    width: 150px;
+    font-size: 12px;
+    color: gray;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
